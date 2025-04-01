@@ -33,6 +33,7 @@ jobs:
           docker-compose up -d
           sleep 10
           docker-compose logs test
+          docker-compose exec -T test pytest --maxfail=1 --disable-warnings -q || exit 1
 
 #      - name: Run tests
 #        run: |
