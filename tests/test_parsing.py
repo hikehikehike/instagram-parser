@@ -15,4 +15,4 @@ def test_parse_posts(client):
     assert response.status_code == 200, 'Expected status code 200'
 
     posts = response.json()['posts']
-    assert len(posts) == 10, f'Expected 10 posts, but got {len(posts)}'
+    assert len(posts) == 10, f'{len(posts)} Expected 10 posts, but got {len(posts)}'
