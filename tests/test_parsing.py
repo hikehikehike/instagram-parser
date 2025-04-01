@@ -12,7 +12,7 @@ def client():
 def test_parse_posts(client):
     response = client.get('/parse_posts')
 
-    assert response.status_code == 200, 'Ожидаемый статус код 200'
+    assert response.status_code == 200, 'Expected status code 200'
 
     posts = response.json()['posts']
-    assert len(posts) == 10, f'Ожидали 10 постов, но получили {len(posts)}'
+    assert len(posts) == 10, f'Expected 10 posts, but got {len(posts)}'

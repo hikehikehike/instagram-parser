@@ -35,6 +35,7 @@ jobs:
 
       - name: Run tests
         run: |
+          export PYTHONPATH=$PYTHONPATH:/app
           docker-compose exec -T fastapi pytest tests/
 
       - name: Stop services
