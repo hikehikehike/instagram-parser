@@ -32,6 +32,7 @@ jobs:
         run: |
           docker-compose up -d
           sleep 10
+          docker-compose logs test
 
 #      - name: Run tests
 #        run: |
