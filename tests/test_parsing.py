@@ -18,6 +18,5 @@ def test_parse_posts(client):
     posts = response.json()['posts']
     posts2 = response2.json()['posts']
 
-
-    assert len(posts) == 10, f'{len(posts)} Expected 10 posts, but got {len(posts)}'
     assert len(posts2) == 10, f'{len(posts2)} Expected 10 posts, but got {len(posts2)}'
+    assert len(posts) == 10, f'{len(posts)} Expected 10 posts, but got {len(posts)}'
