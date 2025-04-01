@@ -72,18 +72,18 @@ services:
     networks:
       - backend
 
-#  test:
-#    build: .
-#    container_name: fastapi_test
-#    depends_on:
-#      - db
-#      - fastapi
-#    environment:
-#      PYTHONPATH: '/app'
-#    command: pytest --maxfail=1 --disable-warnings -q
-#
-#    networks:
-#      - backend
+  test:
+    build: .
+    container_name: fastapi_test
+    depends_on:
+      - db
+      - fastapi
+    environment:
+      PYTHONPATH: '/app'
+    command: pytest --maxfail=1 --disable-warnings -q
+
+    networks:
+      - backend
 
 volumes:
   postgres_data:
