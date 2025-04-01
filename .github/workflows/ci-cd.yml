@@ -28,17 +28,12 @@ jobs:
       - name: Install Docker Compose
         run: sudo apt-get update && sudo apt-get install -y docker-compose
 
-      - name: Start all services with Docker Compose
+      - name: Start all services with Docker Compose and run test
         run: |
           docker-compose up -d
           sleep 10
           docker-compose logs test
           docker-compose exec -T test pytest --maxfail=1 --disable-warnings -q || exit 1
-
-#      - name: Run tests
-#        run: |
-#          export PYTHONPATH=/app:/app/main
-#          docker-compose exec -T fastapi pytest tests/
 
       - name: Stop services
         run: docker-compose down
